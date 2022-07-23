@@ -1,30 +1,32 @@
+import { StyledList, StyledListButton, StyledListItem } from "./ContactList.styles";
+
 export const ContactList = ({ contacts, filter, deleteHandler }) => {
   return (
-    <ul>
+    <StyledList>
       {{ filter } === ''
         ? contacts.items.map(contact => (
-            <li key={contact.id}>
+            <StyledListItem key={contact.id}>
               {contact.name}: {contact.number}
-              <button type="button" onClick={() => deleteHandler(contact.id)}>
+              <StyledListButton type="button" onClick={() => deleteHandler(contact.id)}>
                 Delete
-              </button>
-            </li>
+              </StyledListButton>
+            </StyledListItem>
           ))
         : contacts.items
             .filter(contact =>
               contact.name.toLowerCase().includes(filter.toLowerCase())
             )
             .map(contact => (
-              <li key={contact.id}>
+              <StyledListItem key={contact.id}>
                 {contact.name}: {contact.number}
-                <button
+                <StyledListButton
                   type="button"
                   onClick={() => deleteHandler(contact.id)}
                 >
                   Delete
-                </button>
-              </li>
+                </StyledListButton>
+              </StyledListItem>
             ))}
-    </ul>
+    </StyledList>
   );
 };

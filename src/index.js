@@ -2,11 +2,11 @@ import { lazy, Suspense } from 'react';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { App } from 'components/App';
+import { App } from 'components/App/App';
 import { Homepage } from './components/Homepage/Homepage';
 import { UserMenu } from 'components/UserMenu/UserMenu';
 import { Loader } from 'components/Loader/Loader';
-import ProtectedRoute from 'components/ProtectedRoute';
+import ProtectedRoute from 'components/ProtectedRoute/ProtectedRoute';
 import authReducer from 'store/Auth/reducer';
 import './index.css';
 import { Provider } from 'react-redux';
@@ -54,6 +54,3 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </Provider>
   </React.StrictMode>
 );
-// eslint-disable-next-line 
-{/* <Route index element={<App />} />
-                <Route path='contacts' element={<App/>} /> */}

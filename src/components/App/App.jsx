@@ -1,10 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
 import { nanoid } from 'nanoid';
-import { ContactForm } from './ContactForm';
-import { ContactList } from './ContactList';
-import { Filter } from './Filter';
+import { ContactForm } from '../ContactForm/ContactForm';
+import { ContactList } from '../ContactList/ContactList';
+import { Filter } from '../Filter/Filter';
 import { useDispatch, useSelector } from 'react-redux';
-import { filterContacts, deleteContact } from '../store/actions';
+import { filterContacts, deleteContact } from '../../store/actions';
 import { fetchContacts, saveContact, removeContact } from 'store/reducer';
 
 export const App = () => {

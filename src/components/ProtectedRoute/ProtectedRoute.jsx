@@ -4,7 +4,7 @@ import { Navigate, Outlet } from 'react-router-dom';
 import { getIsUserAuthenticated, selectUserRequestStatus } from 'store/Auth/selectors';
 import { checkIfStillAuthenticated } from 'store/Auth/actions';
 import { JWT_TOKEN_STORAGE_KEY } from 'api/constants';
-import { Loader } from './Loader/Loader';
+import { Loader } from '../Loader/Loader';
 
 const ProtectedRoute = ({ isOnlyForNotAuthenticated }) => {
   const dispatch = useDispatch();
