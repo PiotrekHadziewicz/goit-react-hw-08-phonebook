@@ -75,7 +75,7 @@ const RegistrationForm = () => {
           ref={inputRef}
           id={firstNameId.current}
           name="firstname"
-          placeholder="Name"
+          placeholder="min 3 characters"
           value={formValues.firstname}
           onChange={handleInputValueChange}
         />
@@ -94,7 +94,7 @@ const RegistrationForm = () => {
         <StyledInput
           id={passwordId.current}
           name="password"
-          placeholder="Password"
+          placeholder="min 7 characters"
           type="password"
           value={formValues.password}
           onChange={handleInputValueChange}
