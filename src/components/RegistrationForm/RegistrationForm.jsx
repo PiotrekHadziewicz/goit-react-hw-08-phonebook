@@ -41,7 +41,7 @@ const RegistrationForm = () => {
     email: '',
     password: '',
   });
-
+    
   const handleSubmit = (event) => {
     event.preventDefault();
     const { email, password, firstname } = formValues;

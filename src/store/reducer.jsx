@@ -22,12 +22,20 @@ export const removeContact = createAsyncThunk(removeFromApi, async (contactId) =
   return response.data;
 });
 export const createUserRequest = async (payload) => {
-  const { data } = await userApi.post('/users/signup', payload);
+  const { data } = await userApi.post('/users/signup', payload).catch(error => {
+    if (error.response.status === 400) {
+      alert('This email already exists.');
+    }
+  });
   localStorage.setItem(JWT_TOKEN_STORAGE_KEY, data.token);
   return data;
 };
 export const authenticateUserRequest = async (payload) => {
-  const { data } = await userApi.post('/users/login', payload);
+  const { data } = await userApi.post('/users/login', payload).catch(error => {
+    if (error.response.status === 400) {
+      alert('Wrong email or password.');
+    }
+  });
   localStorage.setItem(JWT_TOKEN_STORAGE_KEY, data.token);
   return data;
 };
