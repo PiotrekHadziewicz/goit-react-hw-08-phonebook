@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router } from "react-router-dom";
 import { App } from 'components/App/App';
 import { Homepage } from './components/Homepage/Homepage';
 import { UserMenu } from 'components/UserMenu/UserMenu';
@@ -29,7 +30,7 @@ export default store;
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter>
+      <HashRouter>
         <Suspense fallback={<Loader />}>
           <Routes>
             <Route
@@ -50,7 +51,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             </Route>
           </Routes>
         </Suspense>
-      </BrowserRouter>
+      </HashRouter>
     </Provider>
   </React.StrictMode>
 );
